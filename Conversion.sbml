@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by JarnacLite version 1.5.5171.24199 on 2017-06-30 11:48 with libSBML version 5.9.1. -->
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model id="NewModel" name="NewModel">
+    <listOfCompartments>
+      <compartment id="compartment" size="1" />
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="X" compartment="compartment" initialConcentration="0" boundaryCondition="true" />
+      <species id="GTP" compartment="compartment" initialConcentration="1" boundaryCondition="false" />
+      <species id="CodY" compartment="compartment" initialConcentration="10" boundaryCondition="false" />
+      <species id="Complex" compartment="compartment" initialConcentration="0" boundaryCondition="false" />
+      <species id="Pe" compartment="compartment" initialConcentration="50" boundaryCondition="false" />
+      <species id="Pin" compartment="compartment" initialConcentration="0.02" boundaryCondition="false" />
+      <species id="Pa" compartment="compartment" initialConcentration="0.1" boundaryCondition="false" />
+      <species id="R" compartment="compartment" initialConcentration="0" boundaryCondition="false" />
+      <species id="Kb" compartment="compartment" initialConcentration="0" boundaryCondition="false" />
+      <species id="SFP" compartment="compartment" initialConcentration="1" boundaryCondition="false" />
+      <species id="SAP" compartment="compartment" initialConcentration="1" boundaryCondition="false" />
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="a" value="5" constant="true" />
+      <parameter id="b" value="0.02" constant="true" />
+      <parameter id="c" value="0.001" constant="true" />
+      <parameter id="d" value="0.1" constant="true" />
+      <parameter id="e" value="0.4" constant="true" />
+      <parameter id="f" value="20" constant="true" />
+      <parameter id="g" value="20" constant="true" />
+      <parameter id="h" value="0.002" constant="true" />
+      <parameter id="i" value="0.002" constant="true" />
+      <parameter id="l" value="5" constant="true" />
+      <parameter id="m" value="0.001" constant="true" />
+      <parameter id="n" value="0.02" constant="true" />
+      <parameter id="o" value="20" constant="true" />
+      <parameter id="p" value="20" constant="true" />
+      <parameter id="q" value="20" constant="true" />
+      <parameter id="r" value="0.02" constant="true" />
+      <parameter id="s" value="0.083" constant="true" />
+      <parameter id="t" value="0.02" constant="true" />
+      <parameter id="u" value="2" constant="true" />
+      <parameter id="v" value="2" constant="true" />
+      <parameter id="w" value="0.0004" constant="true" />
+      <parameter id="x" value="0.002" constant="true" />
+      <parameter id="y" value="10" constant="true" />
+      <parameter id="z" value="20" constant="true" />
+      <parameter id="aa" value="20" constant="true" />
+      <parameter id="bb" value="0.1" constant="true" />
+      <parameter id="cc" value="1.7e-008" constant="true" />
+      <parameter id="dd" value="0.002" constant="true" />
+      <parameter id="ee" value="0.001" constant="true" />
+      <parameter id="ff" value="0.0004" constant="true" />
+      <parameter id="gg" value="0.01" constant="true" />
+      <parameter id="hh" value="0.002" constant="true" />
+      <parameter id="ii" value="0.05" constant="true" />
+      <parameter id="jj" value="8e-005" constant="true" />
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="_J0" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="GTP" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CodY" />
+          <modifierSpeciesReference species="CodY" />
+          <modifierSpeciesReference species="Complex" />
+          <modifierSpeciesReference species="Complex" />
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <plus />
+              <apply>
+                <minus />
+                <apply>
+                  <minus />
+                  <ci> a </ci>
+                  <apply>
+                    <times />
+                    <ci> b </ci>
+                    <ci> GTP </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times />
+                  <ci> c </ci>
+                  <ci> CodY </ci>
+                  <ci> GTP </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times />
+                <ci> d </ci>
+                <ci> Complex </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="_J1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CodY" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="GTP" />
+          <modifierSpeciesReference species="GTP" />
+          <modifierSpeciesReference species="Complex" />
+          <modifierSpeciesReference species="Complex" />
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus />
+              <apply>
+                <plus />
+                <apply>
+                  <minus />
+                  <apply>
+                    <divide />
+                    <apply>
+                      <times />
+                      <ci> e </ci>
+                      <ci> f </ci>
+                    </apply>
+                    <apply>
+                      <plus />
+                      <apply>
+                        <times />
+                        <ci> g </ci>
+                        <ci> CodY </ci>
+                      </apply>
+                      <ci> f </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times />
+                    <ci> c </ci>
+                    <ci> CodY </ci>
+                    <ci> GTP </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times />
+                  <ci> d </ci>
+                  <ci> Complex </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times />
+                <ci> h </ci>
+                <ci> CodY </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="_J2" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Complex" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CodY" />
+          <modifierSpeciesReference species="CodY" />
+          <modifierSpeciesReference species="GTP" />
+          <modifierSpeciesReference species="GTP" />
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus />
+              <apply>
+                <minus />
+                <apply>
+                  <times />
+                  <ci> c </ci>
+                  <ci> CodY </ci>
+                  <ci> GTP </ci>
+                </apply>
+                <apply>
+                  <times />
+                  <ci> d </ci>
+                  <ci> Complex </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times />
+                <ci> i </ci>
+                <ci> Complex </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="_J3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Pe" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Pin" />
+          <modifierSpeciesReference species="Pin" />
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus />
+              <apply>
+                <plus />
+                <ci> l </ci>
+                <apply>
+                  <times />
+                  <ci> m </ci>
+                  <ci> Pin </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times />
+                <ci> n </ci>
+                <ci> Pe </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="_J4" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Pin" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Complex" />
+          <modifierSpeciesReference species="Complex" />
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus />
+              <apply>
+                <minus />
+                <apply>
+                  <divide />
+                  <apply>
+                    <times />
+                    <ci> o </ci>
+                    <ci> p </ci>
+                  </apply>
+                  <apply>
+                    <plus />
+                    <apply>
+                      <times />
+                      <ci> q </ci>
+                      <ci> Complex </ci>
+                    </apply>
+                    <ci> p </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times />
+                  <ci> m </ci>
+                  <ci> Pin </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times />
+                <ci> r </ci>
+                <ci> Pin </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="_J5" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Pa" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Pin" />
+          <modifierSpeciesReference species="Pin" />
+          <modifierSpeciesReference species="R" />
+          <modifierSpeciesReference species="R" />
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus />
+              <apply>
+                <minus />
+                <apply>
+                  <times />
+                  <ci> m </ci>
+                  <ci> Pin </ci>
+                </apply>
+                <apply>
+                  <times />
+                  <ci> s </ci>
+                  <ci> R </ci>
+                  <ci> Pa </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times />
+                <ci> t </ci>
+                <ci> Pa </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="_J6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="R" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CodY" />
+          <modifierSpeciesReference species="CodY" />
+          <modifierSpeciesReference species="SFP" />
+          <modifierSpeciesReference species="SFP" />
+          <modifierSpeciesReference species="Pa" />
+          <modifierSpeciesReference species="Pa" />
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus />
+              <apply>
+                <minus />
+                <apply>
+                  <minus />
+                  <apply>
+                    <divide />
+                    <apply>
+                      <times />
+                      <ci> o </ci>
+                      <ci> u </ci>
+                    </apply>
+                    <apply>
+                      <plus />
+                      <apply>
+                        <times />
+                        <ci> v </ci>
+                        <ci> CodY </ci>
+                      </apply>
+                      <ci> u </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times />
+                    <ci> w </ci>
+                    <ci> R </ci>
+                    <ci> SFP </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times />
+                  <ci> s </ci>
+                  <ci> R </ci>
+                  <ci> Pa </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times />
+                <ci> x </ci>
+                <ci> R </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="_J7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Kb" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CodY" />
+          <modifierSpeciesReference species="CodY" />
+          <modifierSpeciesReference species="SFP" />
+          <modifierSpeciesReference species="SFP" />
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus />
+              <apply>
+                <minus />
+                <apply>
+                  <minus />
+                  <apply>
+                    <divide />
+                    <apply>
+                      <times />
+                      <ci> y </ci>
+                      <ci> z </ci>
+                    </apply>
+                    <apply>
+                      <plus />
+                      <apply>
+                        <times />
+                        <ci> aa </ci>
+                        <ci> CodY </ci>
+                      </apply>
+                      <ci> z </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times />
+                    <ci> bb </ci>
+                    <ci> Kb </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times />
+                  <ci> cc </ci>
+                  <ci> Kb </ci>
+                  <ci> SFP </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times />
+                <ci> dd </ci>
+                <ci> Kb </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="_J8" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="SFP" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Kb" />
+          <modifierSpeciesReference species="Kb" />
+          <modifierSpeciesReference species="R" />
+          <modifierSpeciesReference species="R" />
+          <modifierSpeciesReference species="SAP" />
+          <modifierSpeciesReference species="SAP" />
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus />
+              <apply>
+                <minus />
+                <apply>
+                  <minus />
+                  <apply>
+                    <minus />
+                    <apply>
+                      <times />
+                      <ci> ee </ci>
+                      <ci> Kb </ci>
+                      <ci> SFP </ci>
+                    </apply>
+                    <apply>
+                      <times />
+                      <ci> w </ci>
+                      <ci> R </ci>
+                      <ci> SFP </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times />
+                    <ci> ff </ci>
+                    <ci> SFP </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times />
+                  <ci> gg </ci>
+                  <ci> SFP </ci>
+                  <ci> SAP </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times />
+                <ci> hh </ci>
+                <ci> SFP </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="_J9" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="SAP" stoichiometry="1" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="SFP" />
+          <modifierSpeciesReference species="SFP" />
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus />
+              <apply>
+                <minus />
+                <apply>
+                  <times />
+                  <ci> gg </ci>
+                  <ci> SAP </ci>
+                  <ci> SFP </ci>
+                </apply>
+                <apply>
+                  <times />
+                  <ci> ii </ci>
+                  <ci> SAP </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times />
+                <ci> jj </ci>
+                <ci> SAP </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
