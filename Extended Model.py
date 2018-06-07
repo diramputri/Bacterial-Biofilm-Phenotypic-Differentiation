@@ -87,8 +87,3 @@ ss= 1;
 ''')
    
 res = r.simulate(0, 1000, 1000, ['Time', 'SAP']);
-plt.ylim ((0,1))
-plt.xlabel ('Time')
-plt.ylabel ('Concentration')
-plt.title ('My First Plot ($y = x^2$)')
-r.plot(m);
